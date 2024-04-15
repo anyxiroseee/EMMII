@@ -54,7 +54,7 @@ for (i in 3:n_train) {
 }
 
 #оценка параметров GARCH модели
-garch_model = garch(h_residuals, order = c(3, 0), start = A)
+garch_model = garch(h_residuals, order = c(0, 3), start = A)
 A_estimates = c(garch_model$coef[1], garch_model$coef[2], garch_model$coef[3], garch_model$coef[4]) 
 
 θ_estimates #оценки параметров θ
@@ -155,7 +155,7 @@ for (i in 3:n_train) {
 }
 
 #оценка параметров GARCH модели
-garch_model = garch(h_residuals, order = c(3, 0))
+garch_model = garch(h_residuals, order = c(0, 3))
 A_estimates = c(garch_model$coef[1], garch_model$coef[2], garch_model$coef[3], garch_model$coef[4]) 
 
 θ_estimates #оценки параметров θ
